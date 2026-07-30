@@ -1,7 +1,20 @@
 import Link from 'next/link';
 import { BotMessageSquare } from 'lucide-react';
 
-export default function Logo({ className = '' }) {
+export default function Logo({ className = '', variant = 'auto' }) {
+  
+  const getFluentoColor = () => {
+    if (variant === 'dark') return 'text-white';
+    if (variant === 'light') return 'text-brand-dark';
+    return 'text-brand-dark dark:text-white'; // auto
+  };
+
+  const getSubtitleColor = () => {
+    if (variant === 'dark') return 'text-slate-400 group-hover:text-brand-secondary';
+    if (variant === 'light') return 'text-brand-muted group-hover:text-brand-primary';
+    return 'text-brand-muted dark:text-slate-400 group-hover:text-brand-primary dark:group-hover:text-brand-secondary';
+  };
+
   return (
     <Link
       href="/"
@@ -22,15 +35,19 @@ export default function Logo({ className = '' }) {
       {/* Brand Name Typography */}
       <div className="flex flex-col leading-none">
         <div className="flex items-center gap-1">
-          <span className="font-heading font-extrabold text-xl tracking-tight text-brand-dark">
+          {/* 'Fluento' Text (Dynamic Color based on theme) */}
+          <span className={`font-heading font-extrabold text-xl tracking-tight transition-colors ${getFluentoColor()}`}>
             Fluento
           </span>
+
+          {/* 'Speak' Text (Gradient Color) */}
           <span className="font-heading font-extrabold text-xl tracking-tight text-transparent bg-clip-text bg-linear-to-r from-brand-primary to-brand-secondary">
             Speak
           </span>
         </div>
         
-        <span className="text-[10px] font-semibold tracking-widest uppercase text-brand-muted mt-0.5 group-hover:text-brand-primary transition-colors">
+        {/* Subtitle */}
+        <span className={`text-[10px] font-semibold tracking-widest uppercase transition-colors mt-0.5 ${getSubtitleColor()}`}>
           Next-Gen AI Learning
         </span>
       </div>
