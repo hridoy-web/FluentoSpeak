@@ -114,7 +114,7 @@ export default function FAQSection() {
             <Sparkles className="w-5 h-5 text-brand-primary shrink-0" aria-hidden="true" />
             <span>অন্য কোনো প্রশ্ন আছে যা এখানে নেই?</span>
             <a 
-              href="mailto:support@fluentospeak.com" 
+              href="mailto:chowdhuryhridoy902@gmail.com" 
               className="text-brand-primary font-bold underline hover:text-brand-secondary transition-colors"
             >
               আমাদের সাপোর্ট টিমে যোগাযোগ করুন
