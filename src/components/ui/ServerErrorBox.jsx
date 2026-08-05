@@ -18,7 +18,7 @@ export default function ServerErrorBox({ onRetry }) {
           আপনার ইন্টারনেট বা আমাদের নেটওয়ার্কে সামান্য সমস্যা হয়েছে। পেজটি রিফ্রেশ করে আবার চেষ্টা করুন।
         </p>
       </div>
-
+    
       <button
         onClick={onRetry || (() => window.location.reload())}
         className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-primary text-white text-xs font-bold hover:bg-purple-900 transition-colors shadow-md active:scale-95 cursor-pointer"
